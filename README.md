@@ -67,4 +67,20 @@ npm run dev
 - `npm start` - Inicia o servidor de produção
 - `npm run lint` - Executa o linter
 
+## 🚀 Deploy no Netlify
+
+### Configurar Variáveis de Ambiente
+
+1. No painel do Netlify, vá em **Site settings** → **Environment variables**
+2. Adicione as seguintes variáveis:
+   - `NEXT_PUBLIC_SUPABASE_URL` = sua URL do Supabase
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` = sua chave anon do Supabase
+
+### Deploy Automático
+
+O site já está configurado para deploy automático via `netlify.toml`. Cada push para a branch `main` irá:
+1. Instalar dependências
+2. Rodar `npm run build`
+3. Fazer deploy da pasta `.next`
+
 **Status:** ✅ Migração completa para Next.js concluída!

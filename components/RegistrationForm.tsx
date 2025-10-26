@@ -198,6 +198,13 @@ export default function RegistrationForm() {
     setIsSubmitting(true)
 
     try {
+      // Verificar se Supabase está configurado
+      if (!supabase) {
+        alert('Erro: Sistema de cadastro não configurado. Entre em contato com o suporte.')
+        setIsSubmitting(false)
+        return
+      }
+
       // Converter data se preenchida
       let dataFormatada = null
       if (formData.data_nascimento) {
