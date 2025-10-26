@@ -1,49 +1,49 @@
 /* Font Faces */
 @font-face {
     font-family: 'FF Clan Pro';
-    src: url('/fonts/FFClanProThin.ttf') format('truetype');
+    src: url('fonts/FFClanProThin.TTF') format('truetype');
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FF Clan Pro';
-    src: url('/fonts/FFClanProRegular.ttf') format('truetype');
+    src: url('fonts/FFClanProRegular.TTF') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FF Clan Pro';
-    src: url('/fonts/FFClanProItalic.ttf') format('truetype');
+    src: url('fonts/FFClanProItalic.TTF') format('truetype');
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'FF Clan Pro';
-    src: url('/fonts/FFClanProMedium.ttf') format('truetype');
+    src: url('fonts/FFClanProMedium.TTF') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FF Clan Pro';
-    src: url('/fonts/FFClanProMediumIt.ttf') format('truetype');
+    src: url('fonts/FFClanProMediumIt.TTF') format('truetype');
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'FF Clan Pro';
-    src: url('/fonts/FFClanProBold.ttf') format('truetype');
+    src: url('fonts/FFClanProBold.TTF') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FF Clan Pro';
-    src: url('/fonts/FFClanProBoldIt.ttf') format('truetype');
+    src: url('fonts/FFClanProBoldIt.TTF') format('truetype');
     font-weight: 700;
     font-style: italic;
 }
@@ -155,7 +155,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    min-height: 600px;
 }
 
 .form-card {
@@ -163,12 +162,6 @@ body {
     border-radius: 16px;
     padding: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.form-card.hiding {
-    opacity: 0;
-    transform: translateY(-20px);
 }
 
 .form-title {
@@ -236,49 +229,46 @@ body {
     transform: translateY(0);
 }
 
-.submit-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
 /* Promo Card */
 .promo-card {
     background: white;
     border-radius: 16px;
-    padding: 60px 40px;
+    padding: 30px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: none;
     opacity: 0;
-    transform: scale(0.95) translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .promo-card.show {
-    opacity: 1;
-    transform: scale(1) translateY(0);
+    display: block;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .promo-icon {
-    margin-bottom: 30px;
-}
-
-.promo-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1D1D1F;
     margin-bottom: 20px;
 }
 
+.promo-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1D1D1F;
+    margin-bottom: 15px;
+}
+
 .promo-text {
-    font-size: 16px;
+    font-size: 14px;
     color: #666;
-    line-height: 1.8;
-    max-width: 500px;
+    line-height: 1.6;
 }
 
 /* CTA Section */
